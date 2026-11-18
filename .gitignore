@@ -1,7 +1,7 @@
 build/
 cmake-build-*/
 docs/
-dump/
+.dump/
 .DS_Store
 *.out
 *.exe
@@ -10,3 +10,4 @@ dump/
 *.dylib
 .vscode/
 .idea/
+*.ppm
