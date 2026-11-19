@@ -1,6 +1,5 @@
-cmake_minimum_required(VERSION 4.4)
+cmake_minimum_required(VERSION 3.20)
 project(image_processing LANGUAGES CXX)
-#add_executable(${PROJECT_NAME} LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -39,6 +38,13 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(googletest)
 
 enable_testing()
+
+add_executable(${PROJECT_NAME}
+    source/main.cpp
+    source/ppm_P3_generator.cpp
+    source/ppm_P3_filter.cpp
+)
+target_link_libraries(${PROJECT_NAME} PRIVATE processing_lib)
 
 add_executable(processing_lib_tests tests/ProcessingTests.cpp)
 
