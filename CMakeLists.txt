@@ -39,7 +39,11 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-add_executable(${PROJECT_NAME} source/main.cpp)
+add_executable(${PROJECT_NAME}
+    source/main.cpp
+    source/ppm_P3_generator.cpp
+    source/ppm_P3_filter.cpp
+)
 target_link_libraries(${PROJECT_NAME} PRIVATE processing_lib)
 
 add_executable(processing_lib_tests tests/ProcessingTests.cpp)
